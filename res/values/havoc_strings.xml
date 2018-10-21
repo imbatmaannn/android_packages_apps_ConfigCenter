@@ -850,4 +850,8 @@
     <string name="center_text_clock_title">Center Text Clock</string>
     <string name="center_text_clock_summary">Tranform Q-Clock to X-Clock</string>
 
+    <!-- Lock Clock & Date Size -->
+    <string name="lockdate_font_size_title">Date font size</string>
+    <string name="lockclock_font_size_title">Clock font size</string>
+
 </resources>
