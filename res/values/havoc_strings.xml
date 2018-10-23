@@ -229,6 +229,10 @@
     <string name="show_fourg_icon_title">4G icon</string>
     <string name="show_fourg_icon_summary">Display 4G icon in status bar instead of LTE</string>
 
+    <!-- Show VoLTE icon on statusbar -->
+    <string name="volte_icon_title">VoLTE icon</string>
+    <string name="volte_icon_summary">Display VoLTE icon</string>
+
     <!-- Volume swap buttons -->
     <string name="swap_volume_buttons_title">Swap keys</string>
     <string name="swap_volume_buttons_summary">Invert volume keys when the device is rotated</string>
