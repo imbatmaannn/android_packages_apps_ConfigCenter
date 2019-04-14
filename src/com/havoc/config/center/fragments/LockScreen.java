@@ -29,6 +29,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.support.preferences.SecureSettingMasterSwitchPreference;
+import com.havoc.support.preferences.CustomSeekBarPreference;
 
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -37,9 +38,13 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
+    private static final String CUSTOM_TEXT_CLOCK_FONTS = "custom_text_clock_fonts";
+    private static final String CUSTOM_TEXT_CLOCK_FONT_SIZE  = "custom_text_clock_font_size";
 
     private ListPreference mLockClockFonts;
+    private ListPreference mTextClockFonts;
     private ListPreference mLockDateFonts;
+    private CustomSeekBarPreference mCustomTextClockFontSize;
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
 
@@ -65,6 +70,19 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mLockClockFonts.setSummary(mLockClockFonts.getEntry());
         mLockClockFonts.setOnPreferenceChangeListener(this);
 
+        // Lockscren Text Clock Fonts
+        mTextClockFonts = (ListPreference) findPreference(CUSTOM_TEXT_CLOCK_FONTS);
+        mTextClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.CUSTOM_TEXT_CLOCK_FONTS, 32)));
+        mTextClockFonts.setSummary(mTextClockFonts.getEntry());
+        mTextClockFonts.setOnPreferenceChangeListener(this);
+
+        // Custom Text Clock Size
+        mCustomTextClockFontSize = (CustomSeekBarPreference) findPreference(CUSTOM_TEXT_CLOCK_FONT_SIZE);
+        mCustomTextClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.CUSTOM_TEXT_CLOCK_FONT_SIZE, 40));
+        mCustomTextClockFontSize.setOnPreferenceChangeListener(this);
+
         // Lockscren Date Fonts
         mLockDateFonts = (ListPreference) findPreference(LOCK_DATE_FONTS);
         mLockDateFonts.setValue(String.valueOf(Settings.System.getInt(
@@ -86,11 +104,22 @@ public class LockScreen extends SettingsPreferenceFragment implements
             mLockClockFonts.setValue(String.valueOf(newValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
+        } else if (preference == mTextClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.CUSTOM_TEXT_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mTextClockFonts.setValue(String.valueOf(newValue));
+            mTextClockFonts.setSummary(mTextClockFonts.getEntry());
+            return true;
         } else if (preference == mLockDateFonts) {
             Settings.System.putInt(getContentResolver(), Settings.System.LOCK_DATE_FONTS,
                     Integer.valueOf((String) newValue));
             mLockDateFonts.setValue(String.valueOf(newValue));
             mLockDateFonts.setSummary(mLockDateFonts.getEntry());
+            return true;
+        } else if (preference == mCustomTextClockFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.CUSTOM_TEXT_CLOCK_FONT_SIZE, top*1);
             return true;
         }
         return false;
