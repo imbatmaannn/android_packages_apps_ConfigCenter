@@ -21,6 +21,7 @@ import android.content.ContentResolver;
 import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
+import androidx.preference.ListPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -33,6 +34,9 @@ public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
+
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    private ListPreference mLockClockFonts;
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
 
@@ -50,6 +54,14 @@ public class LockScreen extends SettingsPreferenceFragment implements
         int visualizerEnabled = Settings.Secure.getInt(getActivity().getContentResolver(),
                 LOCKSCREEN_VISUALIZER_ENABLED, 0);
         mVisualizerEnabled.setChecked(visualizerEnabled != 0);
+
+        // Lockscren Clock Fonts
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.LOCK_CLOCK_FONTS, 34)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -58,6 +70,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(),
 		            LOCKSCREEN_VISUALIZER_ENABLED, value ? 1 : 0);
+            return true;
+        } else if (preference == mLockClockFonts) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_CLOCK_FONTS,
+                    Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
         }
         return false;
