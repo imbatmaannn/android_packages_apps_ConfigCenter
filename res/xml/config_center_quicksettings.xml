@@ -158,6 +158,18 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="qs_category"
+        android:title="@string/qs_category">
+
+        <com.havoc.support.preferences.SystemSettingSwitchPreference
+            android:key="dismiss_all_button"
+            android:title="@string/enable_clear_all_button"
+            android:summary="@string/enable_clear_all_button_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="qs_footer"
         android:title="@string/qs_footer_title" >
 
