@@ -951,4 +951,8 @@
     <string name="navigation_bar_ime_space_title">IME button space</string>
     <string name="navigation_bar_ime_space_summary">Show IME button space below keyboard</string>
 
+    <!-- OneUI actionbar -->
+    <string name="enable_oneui">OneUI</string>
+    <string name="enable_oneui_summary">Show spacer above settings actionbar for easier use with one hand\nNOTE: restart settings app to see effect</string>
+
 </resources>
