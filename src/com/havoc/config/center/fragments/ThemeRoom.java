@@ -28,6 +28,7 @@ import com.android.settings.R;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.havoc.support.colorpicker.ColorPickerPreference;
@@ -39,10 +40,12 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
+    private static final String ACCENT_PRESET = "accent_preset";
 
     private IOverlayManager mOverlayService;
-    private ColorPickerPreference mThemeColor;
+    private ColorPickerPreference mAccentColor;
     private ColorPickerPreference mGradientColor;
+    private ListPreference mAccentPreset;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -57,10 +60,22 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mThemeColor) {
+        if (preference == mAccentColor) {
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
+            checkAccentColorPreset(hexColor);
+            try {
+                 mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            } catch (RemoteException ignored) {
+            }
+        } else if (preference == mAccentPreset) {
+            String value = (String) objValue;
+            int index = mAccentPreset.findIndexOfValue(value);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+            SystemProperties.set(ACCENT_COLOR_PROP, value);
             try {
                  mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
                  mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
@@ -82,13 +97,36 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
     }
 
     private void setupAccentPref() {
-        mThemeColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
+        mAccentColor = (ColorPickerPreference) findPreference(ACCENT_COLOR);
         String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
-        int color = "-1".equals(colorVal)
-                ? Color.WHITE
-                : Color.parseColor("#" + colorVal);
-        mThemeColor.setNewPreviewColor(color);
-        mThemeColor.setOnPreferenceChangeListener(this);
+        try {
+            int color = "-1".equals(colorVal)
+                    ? Color.WHITE
+                    : Color.parseColor("#" + colorVal);
+            mAccentColor.setNewPreviewColor(color);
+        }
+        catch (Exception e) {
+            mAccentColor.setNewPreviewColor(Color.WHITE);
+        }
+        mAccentColor.setOnPreferenceChangeListener(this);
+
+        mAccentPreset = (ListPreference) findPreference(ACCENT_PRESET);
+        mAccentPreset.setOnPreferenceChangeListener(this);
+        checkAccentColorPreset(colorVal);
+    }
+
+    private void checkAccentColorPreset(String colorValue) {
+        List<String> colorPresets = Arrays.asList(
+                getResources().getStringArray(R.array.accent_presets_values));
+        if (colorPresets.contains(colorValue)) {
+            mAccentPreset.setValue(colorValue);
+            int index = mAccentPreset.findIndexOfValue(colorValue);
+            mAccentPreset.setSummary(mAccentPreset.getEntries()[index]);
+        }
+        else {
+            mAccentPreset.setSummary(
+                    getResources().getString(R.string.custom_string));
+        }
     }
 
     private void setupGradientPref() {
