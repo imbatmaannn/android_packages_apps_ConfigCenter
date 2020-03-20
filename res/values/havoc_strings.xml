@@ -19,6 +19,11 @@
     <!-- App Title -->
     <string name="config_center_title">Configuration Center</string>
 
+	<!-- QS category -->
+    <string name="qs_category">OOS Dismiss All</string>
+    <string name="enable_clear_all_button">Replace clear all text with nice button</string>
+    <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
+
     <!-- Preferences -->
     <string name="about_title">About</string>
     <string name="about_summary">Learn more about Havoc-OS</string>
@@ -276,7 +281,7 @@
 
     <!-- Lock screen visualizer -->
     <string name="lockscreen_visualizer_enable">Music visualizer</string>
-    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while playing music</string>
+    <string name="lockscreen_visualizer_enable_summary">Show visualizer bars while music\'s playing</string>
     <string name="lockscreen_autocolor_title">Automatic color</string>
     <string name="lockscreen_autocolor_summary">Sync color with lockscreen background</string>
     <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
@@ -686,12 +691,6 @@
     <string name="screenshot_type_title">Screenshot type</string>
     <string name="screenshot_type_fullscreen">Full</string>
     <string name="screenshot_type_partial">Partial</string>
-
-    <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_fade">Fade</string>
-    <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
 
     <!-- Lock icon -->
     <string name="lockscreen_lock_icon_title">Lock icon</string>
