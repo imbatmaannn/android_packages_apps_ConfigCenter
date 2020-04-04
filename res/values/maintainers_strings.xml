@@ -28,6 +28,7 @@
     <string name="device_category_xiaomi_title" translatable="false">Xiaomi</string>
     <string name="device_category_lenovo_title" translatable="false">Lenovo</string>
     <string name="device_category_asus_title" translatable="false">Asus</string>
+    <string name="device_category_realme_title" translatable="false">Realme</string>
     <string name="device_category_leeco_title" translatable="false">LeEco</string>
     <string name="device_category_nextbit_title" translatable="false">Nextbit</string>
     <string name="device_category_nubia_title" translatable="false">Nubia</string>
@@ -200,6 +201,9 @@
     <string name="device_sakura" translatable="false">Xiaomi Redmi 6 Pro</string>
     <string name="device_sakura_summary" translatable="false">sakura\nTushar Mahajan (mahajant99)</string>
 
+    <string name="device_onclite" translatable="false">Xiaomi Redmi 7</string>
+    <string name="device_onclite_summary" translatable="false">onclite\nMohamed Arshad (MArshadRiyaz)</string>
+
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
     <string name="device_raphael_summary" translatable="false">raphael\nWajid Khan (wajidkh08)</string>
 
@@ -230,11 +234,17 @@
     <string name="device_kuntao" translatable="false">Lenovo P2</string>
     <string name="device_kuntao_summary" translatable="false">kuntao\nAdvaith Bhat (advaithbhat)</string>
 
+    <string name="device_I01WD" translatable="false">Asus Zenfone 6 (2019)</string>
+    <string name="device_I01WD_summary" translatable="false">I01WD\nRăileanu Cosmin (Comico)</string>
+
     <string name="device_x00t" translatable="false">Asus Zenfone Max Pro M1</string>
     <string name="device_x00t_summary" translatable="false">X00T\nRizky Benggolo (travarilo)</string>
 
     <string name="device_x01bd" translatable="false">Asus Zenfone Max Pro M2</string>
     <string name="device_x01bd_summary" translatable="false">X01BD\nSonal Singh (SonalSingh18)</string>
+
+    <string name="device_RMX1921" translatable="false">Realme XT</string>
+    <string name="device_RMX1921_summary" translatable="false">RMX1921\nProbir Ghosh (officialpro)</string>
 
     <string name="device_s2" translatable="false">LeEco Le 2</string>
     <string name="device_s2_summary" translatable="false">s2\nHimanshu Kumar (Hk26)</string>
