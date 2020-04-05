@@ -40,7 +40,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_CLOCK = "status_bar_clock";
     private static final String STATUS_BAR_LOGO = "status_bar_logo";
-    private static final String SHOW_HD_ICON = "show_hd_icon";
     private static final String KEY_NETWORK_TRAFFIC = "network_traffic_location";
     private static final String KEY_NETWORK_TRAFFIC_ARROW = "network_traffic_arrow";
     private static final String KEY_NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide_threshold";
@@ -48,8 +47,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private SystemSettingMasterSwitchPreference mStatusBarClockShow;
     private SystemSettingMasterSwitchPreference mStatusBarLogo;
-    private SwitchPreference mShowHDVolte;
-    private boolean mConfigShowHDVolteIcon;
     private ListPreference mNetworkTraffic;
     private SystemSettingSwitchPreference mNetworkTrafficArrow;
     private SystemSettingSeekBarPreference mNetworkTrafficAutohide;
@@ -62,13 +59,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.config_center_statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
-
-        mConfigShowHDVolteIcon = getResources().getBoolean(com.android.internal.R.bool.config_display_hd_volte);
-        int useHDIcon = (mConfigShowHDVolteIcon ? 1 : 0);
-        mShowHDVolte = (SwitchPreference) findPreference(SHOW_HD_ICON);
-        mShowHDVolte.setChecked((Settings.System.getInt(resolver,
-                Settings.System.SHOW_HD_ICON, useHDIcon) == 1));
-        mShowHDVolte.setOnPreferenceChangeListener(this);
 
         mNetworkTraffic = (ListPreference) findPreference(KEY_NETWORK_TRAFFIC);
         int networkTraffic = Settings.System.getInt(resolver,
@@ -123,11 +113,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_LOGO, value ? 1 : 0);
-            return true;
-        } else if (preference == mShowHDVolte) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.SHOW_HD_ICON, value ? 1 : 0);
             return true;
         } else if (preference == mNetworkTraffic) {
             int networkTraffic = Integer.valueOf((String) newValue);
