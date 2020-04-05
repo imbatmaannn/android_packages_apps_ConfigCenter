@@ -119,7 +119,6 @@
             android:title="@string/volte_icon_style_title"
             android:entries="@array/volte_icon_type_entries"
             android:entryValues="@array/volte_icon_type_values"
-            android:dependency="volte_icon"
             android:summary="%s"
             android:defaultValue="0"/>
 

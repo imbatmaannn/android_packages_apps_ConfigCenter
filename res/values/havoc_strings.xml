@@ -106,6 +106,7 @@
 
     <!-- Lockscreen Categories -->
     <string name="ls_disable_elements">Elements</string>
+    <string name="ls_theming_options">Theming</string>
 
     <!-- Lockscreen battery info indicator  -->
     <string name="lockscreen_battery_info_title">Charging info</string>

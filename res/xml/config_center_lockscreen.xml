@@ -117,6 +117,12 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="ls_theming_options"
+        android:title="@string/ls_theming_options">
+
         <com.havoc.support.preferences.SecureSettingListPreference
             android:key="lockscreen_clock_selection"
             android:title="@string/lockscreen_clock_title"
@@ -125,29 +131,14 @@
             android:entryValues="@array/lockscreen_clock_values"
             android:defaultValue="2" />
 
-        <com.havoc.support.preferences.SecureSettingListPreference
-            android:key="lockscreen_date_selection"
-            android:title="@string/lockscreen_date_selection_title"
-            android:dialogTitle="@string/lockscreen_date_dialog_title"
-            android:entries="@array/lockscreen_date_selection_entries"
-            android:entryValues="@array/lockscreen_date_selection_values"
-            android:defaultValue="0" />
-
-        
-        <com.havoc.support.preferences.SecureSettingSwitchPreference
-            android:key="center_text_clock"
-            android:title="@string/center_text_clock_title"
-            android:summary="@string/center_text_clock_summary"
-            android:defaultValue="false" />
-
         <ListPreference
-        android:key="lock_clock_fonts"
-        android:title="@string/lock_clock_font_title"
-        android:dialogTitle="@string/lock_clock_font_dialog_title"
-        android:entries="@array/lock_clock_fonts_entries"
-        android:entryValues="@array/lock_clock_fonts_values"
-        android:summary="@string/lock_clock_font_summary"
-        android:persistent="false" />
+            android:key="lock_clock_fonts"
+            android:title="@string/lock_clock_font_title"
+            android:dialogTitle="@string/lock_clock_font_dialog_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="@string/lock_clock_font_summary"
+            android:persistent="false" />
 
         <com.havoc.support.preferences.CustomSeekBarPreference
              android:key="lockclock_font_size"
@@ -158,24 +149,22 @@
              android:persistent="false"
              android:defaultValue="78" />
 
-        <ListPreference
-        android:key="custom_text_clock_fonts"
-        android:title="@string/custom_text_clock_font_title"
-        android:dialogTitle="@string/lock_clock_font_dialog_title"
-        android:entries="@array/lock_clock_fonts_entries"
-        android:entryValues="@array/lock_clock_fonts_values"
-        android:summary="%s"
-        android:defaultValue="32"
-        android:persistent="false" />
+        <com.havoc.support.preferences.SecureSettingListPreference
+            android:key="lockscreen_date_selection"
+            android:title="@string/lockscreen_date_selection_title"
+            android:dialogTitle="@string/lockscreen_date_dialog_title"
+            android:entries="@array/lockscreen_date_selection_entries"
+            android:entryValues="@array/lockscreen_date_selection_values"
+            android:defaultValue="0" />
 
         <ListPreference
-        android:key="lock_date_fonts"
-        android:title="@string/lock_date_font_title"
-        android:dialogTitle="@string/lock_date_font_dialog_title"
-        android:entries="@array/lock_clock_fonts_entries"
-        android:entryValues="@array/lock_clock_fonts_values"
-        android:summary="@string/lock_date_font_summary"
-        android:persistent="false" />
+            android:key="lock_date_fonts"
+            android:title="@string/lock_date_font_title"
+            android:dialogTitle="@string/lock_date_font_dialog_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="@string/lock_date_font_summary"
+            android:persistent="false" />
 
        <com.havoc.support.preferences.CustomSeekBarPreference
              android:key="lockdate_font_size"
@@ -186,15 +175,30 @@
              android:defaultValue="18"
              android:persistent="false" />
 
+        <ListPreference
+            android:key="custom_text_clock_fonts"
+            android:title="@string/custom_text_clock_font_title"
+            android:dialogTitle="@string/lock_clock_font_dialog_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="%s"
+            android:defaultValue="32"
+            android:persistent="false" />
+
         <com.havoc.support.preferences.CustomSeekBarPreference
-        android:key="custom_text_clock_font_size"
-        android:title="@string/custom_text_clock_font_size_title"
-        android:max="55"
-        settings:min="35"
-        settings:units="dp"
-        android:persistent="false"
-        android:defaultValue="40" />
+            android:key="custom_text_clock_font_size"
+            android:title="@string/custom_text_clock_font_size_title"
+            android:max="55"
+            settings:min="35"
+            settings:units="dp"
+            android:persistent="false"
+            android:defaultValue="40" />
+
+        <com.havoc.support.preferences.SecureSettingSwitchPreference
+            android:key="center_text_clock"
+            android:title="@string/center_text_clock_title"
+            android:summary="@string/center_text_clock_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
-
 </PreferenceScreen>
