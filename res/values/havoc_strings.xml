@@ -618,10 +618,16 @@
     <string name="show_hd_icon_title">HD icon</string>
     <string name="show_hd_icon_summary">Display HD icon in status bar instead of VoLTE</string>
     <string name="volte_icon_style_title">Select VoLTE Icon</string>
-    <string name="volte_icon_vo">Vo Only Icon</string>
-    <string name="volte_icon_volte">VoLTE Icon</string>
-    <string name="volte_icon_oos">VoLTE OOS Icon</string>
-    <string name="volte_icon_hd">HD Icon</string>
+    <string name="volte_icon_tos">Default</string>
+    <string name="volte_icon_asus">Asus</string>
+    <string name="volte_icon_vo">Vo</string>
+    <string name="volte_icon_volit">VoLIT</string>
+    <string name="volte_icon_margarita">Margarita</string>
+    <string name="volte_icon_oos">OnePlus</string>
+    <string name="volte_icon_hd">HD</string>
+    <string name="volte_icon_android1hd">Android One HD</string>
+    <string name="volte_icon_miui">MIUI</string>
+
 
     <!-- Per App aspect Ratio -->
     <string name="action_save">Save</string>
