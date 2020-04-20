@@ -18,6 +18,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/screen_title" >
 
+    <PreferenceCategory
+         android:title="@string/themeroom_title">
+
+    <Preference
+         android:key="theme_room"
+         android:title="@string/themeroom_title"
+         android:summary="@string/themeroom_summary"
+         android:fragment="com.havoc.config.center.fragments.ThemeRoom" />
+
+    </PreferenceCategory>
+
     <Preference
         android:key="display_cutout_force_fullscreen_settings"
         android:title="@string/display_cutout_force_fullscreen_title"

@@ -880,4 +880,12 @@
     <string name="adaptive_playback_timeout_5_min">5 minutes</string>
     <string name="adaptive_playback_timeout_10_min">10 minutes</string>
 
+    <!-- RGB Picker -->
+    <string name="themeroom_title">Theme Room</string>
+    <string name="themeroom_summary">Accent-Gradient theming</string>
+    <string name="accent_color">Accent picker</string>
+    <string name="accent_summary">System wide accent picker</string>
+    <string name="gradient_color">Gradient picker</string>
+    <string name="gradient_summary">Gradient effect maker</string>
+
 </resources>
