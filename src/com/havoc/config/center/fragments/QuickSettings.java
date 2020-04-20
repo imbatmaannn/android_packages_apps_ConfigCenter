@@ -30,6 +30,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.support.preferences.CustomSeekBarPreference;
 import com.havoc.support.preferences.SystemSettingMasterSwitchPreference;
+import com.havoc.support.preferences.SystemSettingSwitchPreference;
 import com.havoc.support.colorpicker.ColorPickerPreference;
 
 public class QuickSettings extends SettingsPreferenceFragment implements
@@ -45,6 +46,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String QS_BACKGROUND_BLUR = "qs_background_blur";
     private static final String QS_PANEL_COLOR = "qs_panel_color";
+    private static final String PREF_QSBG_NEW_TINT = "qs_panel_bg_use_new_tint";
     static final int DEFAULT_QS_PANEL_COLOR = 0xffffffff;
 
     private CustomSeekBarPreference mQsColumnsPortrait;
@@ -55,6 +57,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private SystemSettingMasterSwitchPreference mCustomHeader;
     private SystemSettingMasterSwitchPreference mQsBlur;
     private ColorPickerPreference mQsPanelColor;
+    private SystemSettingSwitchPreference mQsBgNewTint;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,6 +103,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mQsPanelColor.setSummary(hexColor);
         mQsPanelColor.setNewPreviewColor(intColor);
+
+        mQsBgNewTint = (SystemSettingSwitchPreference) findPreference(PREF_QSBG_NEW_TINT);
+        mQsBgNewTint.setChecked((Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 1) == 1));
+        mQsBgNewTint.setOnPreferenceChangeListener(this);
 
         updateMasterPrefs();
     }
@@ -163,6 +171,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QS_PANEL_BG_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsBgNewTint) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.QS_PANEL_BG_USE_NEW_TINT, value ? 1 : 0);
+            XtendedUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
         return false;
