@@ -41,11 +41,13 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
     private static final String GRADIENT_COLOR = "gradient_color";
     private static final String GRADIENT_COLOR_PROP = "persist.sys.theme.gradientcolor";
     private static final String ACCENT_PRESET = "accent_preset";
+    private static final String GRADIENT_PRESET = "gradient_preset";
 
     private IOverlayManager mOverlayService;
     private ColorPickerPreference mAccentColor;
     private ColorPickerPreference mGradientColor;
     private ListPreference mAccentPreset;
+    private ListPreference mGradientPreset;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -86,6 +88,18 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
             int color = (Integer) objValue;
             String hexColor = String.format("%08X", (0xFFFFFFFF & color));
             SystemProperties.set(GRADIENT_COLOR_PROP, hexColor);
+            checkGradientColorPreset(hexColor);
+            try {
+                 mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+                 mOverlayService.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+            } catch (RemoteException ignored) {
+            }
+        } else if (preference == mGradientPreset) {
+            String value = (String) objValue;
+            int index = mGradientPreset.findIndexOfValue(value);
+            mGradientPreset.setSummary(mGradientPreset.getEntries()[index]);
+            SystemProperties.set(GRADIENT_COLOR_PROP, value);
             try {
                  mOverlayService.reloadAndroidAssets(UserHandle.USER_CURRENT);
                  mOverlayService.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
@@ -115,6 +129,25 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
         checkAccentColorPreset(colorVal);
     }
 
+    private void setupGradientPref() {
+        mGradientColor = (ColorPickerPreference) findPreference(GRADIENT_COLOR);
+        String colorVal = SystemProperties.get(GRADIENT_COLOR_PROP, "-1");
+        try {
+            int color = "-1".equals(colorVal)
+                    ? Color.WHITE
+                    : Color.parseColor("#" + colorVal);
+            mGradientColor.setNewPreviewColor(color);
+        }
+        catch (Exception e) {
+            mGradientColor.setNewPreviewColor(Color.WHITE);
+        }
+        mGradientColor.setOnPreferenceChangeListener(this);
+
+        mGradientPreset = (ListPreference) findPreference(GRADIENT_PRESET);
+        mGradientPreset.setOnPreferenceChangeListener(this);
+        checkGradientColorPreset(colorVal);
+    }
+
     private void checkAccentColorPreset(String colorValue) {
         List<String> colorPresets = Arrays.asList(
                 getResources().getStringArray(R.array.accent_presets_values));
@@ -129,14 +162,18 @@ public class ThemeRoom extends SettingsPreferenceFragment implements
         }
     }
 
-    private void setupGradientPref() {
-        mGradientColor = (ColorPickerPreference) findPreference(GRADIENT_COLOR);
-        String colorVal = SystemProperties.get(GRADIENT_COLOR_PROP, "-1");
-        int color = "-1".equals(colorVal)
-                ? Color.WHITE
-                : Color.parseColor("#" + colorVal);
-        mGradientColor.setNewPreviewColor(color);
-        mGradientColor.setOnPreferenceChangeListener(this);
+    private void checkGradientColorPreset(String colorValue) {
+        List<String> colorPresets = Arrays.asList(
+                getResources().getStringArray(R.array.accent_presets_values));
+        if (colorPresets.contains(colorValue)) {
+            mGradientPreset.setValue(colorValue);
+            int index = mGradientPreset.findIndexOfValue(colorValue);
+            mGradientPreset.setSummary(mGradientPreset.getEntries()[index]);
+        }
+        else {
+            mGradientPreset.setSummary(
+                    getResources().getString(R.string.custom_string));
+        }
     }
 
     @Override
