@@ -32,7 +32,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.havoc.support.preferences.SecureSettingMasterSwitchPreference;
 import com.havoc.support.preferences.CustomSeekBarPreference;
-
+import com.havoc.support.preferences.SwitchPreference;
 import com.havoc.support.preferences.SystemSettingSwitchPreference;
 
 public class LockScreen extends SettingsPreferenceFragment implements
@@ -40,6 +40,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
+    private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
@@ -57,6 +58,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
 
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private SystemSettingSwitchPreference mFODAnimationEnabled;
+    private SwitchPreference mScreenOffFOD;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -66,8 +68,17 @@ public class LockScreen extends SettingsPreferenceFragment implements
         PackageManager packageManager = getPackageManager();
 
         mFODAnimationEnabled = (SystemSettingSwitchPreference) findPreference(FOD_ANIMATION_PREF);
+
+        boolean mScreenOffFODValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_OFF_FOD, 0) != 0;
+
+        mScreenOffFOD = (SwitchPreference) findPreference(KEY_SCREEN_OFF_FOD);
+        mScreenOffFOD.setChecked(mScreenOffFODValue);
+        mScreenOffFOD.setOnPreferenceChangeListener(this);
+
         if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
             mFODAnimationEnabled.setVisible(false);
+            mScreenOffFOD.setVisible(false);
         }
 
         updateMasterPrefs();
@@ -159,6 +170,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
             int top = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKDATE_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mScreenOffFOD) {
+            int mScreenOffFODValue = (Boolean) newValue ? 1 : 0;
+            Settings.System.putInt(resolver, Settings.System.SCREEN_OFF_FOD, mScreenOffFODValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ALWAYS_ON, mScreenOffFODValue);
             return true;
         }
         return false;

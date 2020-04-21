@@ -180,6 +180,9 @@
     <string name="device_beryllium" translatable="false">Xiaomi Poco F1</string>
     <string name="device_beryllium_summary" translatable="false">beryllium\nNinad Patil (blitzfire3)</string>
 
+    <string name="device_phoenix" translatable="false">Xiaomi Poco X2 / Redmi K30</string>
+    <string name="device_phoenix_summary" translatable="false">phoenix\nAbubakar Yagoub (Blacksuan19)</string>
+    
     <string name="device_land" translatable="false">Xiaomi Redmi 3S</string>
     <string name="device_land_summary" translatable="false">land\nSairam Majgaonkar (Sairam60)</string>
 
@@ -205,7 +208,7 @@
     <string name="device_onclite_summary" translatable="false">onclite\nMohamed Arshad (MArshadRiyaz)</string>
 
     <string name="device_raphael" translatable="false">Xiaomi Redmi K20 Pro</string>
-    <string name="device_raphael_summary" translatable="false">raphael\nWajid Khan (wajidkh08)</string>
+    <string name="device_raphael_summary" translatable="false">raphael\nAlex Tro (nuub1k)</string>
 
     <string name="device_kenzo" translatable="false">Xiaomi Redmi Note 3</string>
     <string name="device_kenzo_summary" translatable="false">kenzo\nPratik Pithore (pratik@2799)</string>
@@ -233,6 +236,9 @@
 
     <string name="device_kuntao" translatable="false">Lenovo P2</string>
     <string name="device_kuntao_summary" translatable="false">kuntao\nAdvaith Bhat (advaithbhat)</string>
+
+    <string name="device_I001D" translatable="false">Asus ROG Phone II</string>
+    <string name="device_I001D_summary" translatable="false">I001D\nRăileanu Cosmin (Comico)</string>
 
     <string name="device_I01WD" translatable="false">Asus Zenfone 6 (2019)</string>
     <string name="device_I01WD_summary" translatable="false">I01WD\nRăileanu Cosmin (Comico)</string>
