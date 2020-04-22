@@ -827,6 +827,18 @@
         <item>@string/accent_preset_35</item>
         <item>@string/accent_preset_36</item>
         <item>@string/accent_preset_37</item>
+        <item>@string/accent_preset_38</item>
+        <item>@string/accent_preset_39</item>
+        <item>@string/accent_preset_40</item>
+        <item>@string/accent_preset_41</item>
+        <item>@string/accent_preset_42</item>
+        <item>@string/accent_preset_43</item>
+        <item>@string/accent_preset_44</item>
+        <item>@string/accent_preset_45</item>
+        <item>@string/accent_preset_46</item>
+        <item>@string/accent_preset_47</item>
+        <item>@string/accent_preset_48</item>
+        <item>@string/accent_preset_49</item>
     </string-array>
 
     <string-array name="accent_presets_values" translatable="false">
@@ -869,6 +881,18 @@
         <item>FFFFFFFF</item>
         <item>107C10</item>
         <item>ff6700</item>
+        <item>546E7A</item>
+        <item>00BCD4</item>
+        <item>C796B6</item>
+        <item>3949AB</item>
+        <item>7E57C2</item>
+        <item>42f4aa</item>
+        <item>E91E63</item>
+        <item>3ddc84</item>
+        <item>F44336</item>
+        <item>00BFA5</item>
+        <item>4A148C</item>
+        <item>FFEB3B</item>
     </string-array>
 
 </resources>

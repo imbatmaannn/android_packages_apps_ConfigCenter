@@ -928,6 +928,18 @@
     <string name="accent_preset_35">white</string>
     <string name="accent_preset_36">XboxGreen</string>
     <string name="accent_preset_37">XiaomiOrange</string>
+    <string name="accent_preset_38">Blue Gray</string>
+    <string name="accent_preset_39">Cyan</string>
+    <string name="accent_preset_40">Flat Pink</string>
+    <string name="accent_preset_41">Indigo</string>
+    <string name="accent_preset_42">Light Purple</string>
+    <string name="accent_preset_43">Mint</string>
+    <string name="accent_preset_44">Pink</string>
+    <string name="accent_preset_45">Q Green</string>
+    <string name="accent_preset_46">Red</string>
+    <string name="accent_preset_47">Teal</string>
+    <string name="accent_preset_48">Violet</string>
+    <string name="accent_preset_49">Yellow</string>
     <string name="accent_preset_title">Accent preset</string>
     <string name="gradient_preset_title">Gradient preset</string>
 
