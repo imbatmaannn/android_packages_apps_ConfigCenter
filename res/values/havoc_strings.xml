@@ -19,8 +19,7 @@
     <!-- App Title -->
     <string name="config_center_title">Configuration Center</string>
 
-	<!-- QS category -->
-    <string name="qs_category">OOS Dismiss All</string>
+    <!-- OOS Dismiss All -->
     <string name="enable_clear_all_button">Replace clear all text with nice button</string>
     <string name="enable_clear_all_button_summary">Show clear all notifications button in quick settings instead of default text one</string>
 
