@@ -27,13 +27,6 @@
          android:summary="@string/themeroom_summary"
          android:fragment="com.havoc.config.center.fragments.ThemeRoom" />
 
-    
-    <com.havoc.support.preferences.SecureSettingSwitchPreference
-         android:key="settings_spacer"
-         android:title="@string/enable_oneui"
-         android:summary="@string/enable_oneui_summary"
-         android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <Preference
