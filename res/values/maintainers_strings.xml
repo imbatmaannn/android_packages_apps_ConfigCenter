@@ -67,7 +67,7 @@
     <string name="device_enchilada_summary" translatable="false">enchilada\nYash Sonawane (rdjr5)</string>
 
     <string name="device_fajita" translatable="false">OnePlus 6T</string>
-    <string name="device_fajita_summary" translatable="false">fajita\nAnushek Prasal (SKULSHADY)</string>
+    <string name="device_fajita_summary" translatable="false">fajita\nYash Sonawane (rdjr5)</string>
 
     <string name="device_guacamoleb" translatable="false">OnePlus 7</string>
     <string name="device_guacamoleb_summary" translatable="false">guacamoleb\nIsmael Angeles (ismael47)</string>
@@ -109,7 +109,7 @@
     <string name="device_ks01ltex_summary" translatable="false">ks01ltex\nKhalvat-M (khalvat)</string>
 
     <string name="device_klte" translatable="false">Samsung Galaxy S5</string>
-    <string name="device_klte_summary" translatable="false">klte\nBruno Santos (Brunowp8)</string>
+    <string name="device_klte_summary" translatable="false">klte\nCan Kizilyar (cnkzlyr)</string>
 
     <string name="device_herolte" translatable="false">Samsung Galaxy S7</string>
     <string name="device_herolte_summary" translatable="false">herolte\nGibran Mather (gibranm)</string>
@@ -128,6 +128,9 @@
 
     <string name="device_evert" translatable="false">Moto G6 Plus</string>
     <string name="device_evert_summary" translatable="false">evert\nJose Santiago (Lieutenant Lettuce)</string>
+
+    <string name="device_river" translatable="false">Moto G7</string>
+    <string name="device_river_summary" translatable="false">river\nAndrew Hexen (SyberHexen)</string>
 
     <string name="device_payton" translatable="false">Moto X4</string>
     <string name="device_payton_summary" translatable="false">payton\nAndrew Hexen (SyberHexen)</string>
@@ -154,7 +157,7 @@
     <string name="device_platina_summary" translatable="false">platina\nRique Barros</string>
 
     <string name="device_sirius" translatable="false">Xiaomi Mi 8 SE</string>
-    <string name="device_sirius_summary" translatable="false">sirius\nZakwan Zach (Zachx)</string>
+    <string name="device_sirius_summary" translatable="false">sirius\nDimas Yudha Pratama</string>
 
     <string name="device_cepheus" translatable="false">Xiaomi Mi 9</string>
     <string name="device_cepheus_summary" translatable="false">cepheus\nJose Santiago (Lieutenant Lettuce)</string>
@@ -164,6 +167,9 @@
 
     <string name="device_jasmine_sprout" translatable="false">Xiaomi Mi A2</string>
     <string name="device_jasmine_sprout_summary" translatable="false">jasmine_sprout\nSiddharth Bharadwaj (SiddharthBharadwaj)</string>
+
+    <string name="device_laurel_sprout" translatable="false">Xiaomi Mi A3</string>
+    <string name="device_laurel_sprout_summary" translatable="false">laurel_sprout\nPrakash Singh (Prakaship78)</string>
 
     <string name="device_oxygen" translatable="false">Xiaomi Mi Max 2</string>
     <string name="device_oxygen_summary" translatable="false">oxygen\nRakesh Roshan (Hard_Rocks83)</string>

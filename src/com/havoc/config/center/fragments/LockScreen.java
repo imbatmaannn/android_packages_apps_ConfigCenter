@@ -41,6 +41,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_VISUALIZER_ENABLED = "lockscreen_visualizer_enabled";
     private static final String FOD_ANIMATION_PREF = "fod_recognizing_animation";
     private static final String KEY_SCREEN_OFF_FOD = "screen_off_fod";
+    private static final String KEY_SCREEN_OFF_FOD_ICON = "screen_off_fod_icon";
 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LOCK_DATE_FONTS = "lock_date_fonts";
@@ -59,6 +60,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private SecureSettingMasterSwitchPreference mVisualizerEnabled;
     private SystemSettingSwitchPreference mFODAnimationEnabled;
     private SwitchPreference mScreenOffFOD;
+    private SystemSettingSwitchPreference mScreenOffFODIcon;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -76,9 +78,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mScreenOffFOD.setChecked(mScreenOffFODValue);
         mScreenOffFOD.setOnPreferenceChangeListener(this);
 
+        mScreenOffFODIcon = (SystemSettingSwitchPreference) findPreference(KEY_SCREEN_OFF_FOD_ICON);
+
         if (!packageManager.hasSystemFeature(LineageContextConstants.Features.FOD)) {
             mFODAnimationEnabled.setVisible(false);
             mScreenOffFOD.setVisible(false);
+            mScreenOffFODIcon.setVisible(false);
         }
 
         updateMasterPrefs();

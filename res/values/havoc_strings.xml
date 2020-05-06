@@ -154,7 +154,7 @@
     <string name="powermenu_screenrecord_title">Screenrecord</string>
     <string name="powermenu_torch">Flashlight</string>
     <string name="powermenu_category_visibility">Lockscreen</string>
-    <string name="powermenu_lockscreen_title">Visibile on the lockscreen</string>
+    <string name="powermenu_lockscreen_title">Visible on the lockscreen</string>
     <string name="powermenu_lockscreen_summary">Show and use the power menu dialog on the lockscreen</string>
     <string name="powermenu_ls_reboot_summary">Show the reboot option on the lockscreen</string>
     <string name="powermenu_ls_advanced_reboot_summary">Show the advanced reboot option on the lockscreen</string>
@@ -437,11 +437,12 @@
     <string name="status_bar_battery_style_circle">Circle</string>
     <string name="status_bar_battery_style_dotted_circle">Circle (Dotted)</string>
     <string name="status_bar_battery_style_filled_circle">Circle (Filled)</string>
+    <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
     <string name="battery_percentage_title">Battery percentage</string>
-    <string name="battery_percentage_off">Disabled</string>
-    <string name="battery_percentage_on">Enabled</string>
-    <string name="battery_percentage_charging">Enabled (While charging)</string>
+    <string name="status_bar_battery_percentage_default">Hidden</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
     <!-- Quick pull down-->
     <string name="quick_pulldown_title">Quick pulldown</string>
@@ -945,6 +946,8 @@
     <!-- Screen off FOD -->
     <string name="screen_off_fod_title">Screen off FOD</string>
     <string name="screen_off_fod_summary">Use fingerprint reader also when the screen is off</string>
+    <string name="screen_off_fod_icon_title">Show icon</string>
+    <string name="screen_off_fod_icon_summary">Show fingerprint icon when the screen is off</string>
 
     <!-- IME button space -->
     <string name="navigation_bar_ime_space_title">IME button space</string>
