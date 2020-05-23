@@ -1059,6 +1059,10 @@
     <string name="qs_tint_accent">Accent Color Tint</string>
     <string name="qs_disco_mode">Qs Disco Mode</string>
 
+    <!-- Gradient Panel QS Bg -->
+    <string name="qs_new_bg_title">Gradient Qs Background</string>
+    <string name="qs_new_bg_summary">Whether to enable gradient based qs panel background</string>
+
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Ticker</string>
     <string name="ticker_screen_summary">Ticker-style status bar notifications</string>
