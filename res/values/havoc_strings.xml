@@ -986,5 +986,46 @@
     <string name="notification_headers_title">R-Style Notifications</string>
     <string name="notification_headers_summary">Whether to show R style notification headers (Requires a SystemUI restart)</string>
 
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">Sensor block per-package</string>
+    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
+
+    <!-- Battery Bar -->
+    <string name="battery_bar_title">Battery bar</string>
+    <string name="battery_bar_summary">Customize battery bar settings</string>
+    <string name="battery_bar_location_title">Location</string>
+    <string name="battery_bar_location_statusbar_top">Status bar (Top)</string>
+    <string name="battery_bar_location_statusbar_bottom">Status bar (Bottom)</string>
+    <string name="battery_bar_location_navbar_top">Navigation bar (Top)</string>
+    <string name="battery_bar_location_navbar_bottom">Navigation bar (Bottom)</string>
+    <string name="battery_bar_color_title">Color</string>
+    <string name="light_statusbar_title">Light Status bar</string>
+    <string name="dark_statusbar_title">Dark Status bar</string>
+    <string name="battery_bar_color_summary">Color range to be used for the bar</string>
+    <string name="battery_bar_charging_color_title">Charging color</string>
+    <string name="battery_bar_thickness_title">Thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">Animate the battery bar when the device is plugged in</string>
+    <string name="battery_bar_style_title">Alignment</string>
+    <string name="battery_bar_style_regular">Regular</string>
+    <string name="battery_bar_style_center_mirrored">Center-mirrored</string>
+    <string name="battery_bar_style_reversed">Reversed</string>
+    <string name="battery_bar_use_charging_color_title">Custom charging color</string>
+    <string name="battery_bar_use_charging_color_summary">Use a custom color when the device is plugged in</string>
+    <string name="battery_blend_start">Empty</string>
+    <string name="battery_blend_end">Full</string>
+    <string name="battery_blend_between">Between</string>
+
+    <!-- Status Bar Ticker -->
+    <string name="ticker_screen_title">Ticker</string>
+    <string name="ticker_screen_summary">Ticker-style status bar notifications</string>
+    <string name="ticker_screen_footer">Ticker is visible only when heads-up notifications are not shown</string>
+    <string name="ticker_mode_title">Show ticker for</string>
+    <string name="ticker_notifications">Notifications</string>
+    <string name="ticker_media">Notifications and music</string>
+    <string name="ticker_animation_mode_title">Animation style</string>
+    <string name="ticker_animation_mode_alpha_fade">Fade</string>
+    <string name="ticker_animation_mode_scroll">Scroll</string>
+    <string name="ticker_tick_duration_title">Duration</string>
 
 </resources>
