@@ -44,7 +44,7 @@
     <string name="statusbar_title">Status Bar</string>
     <string name="statusbar_summary">Clock, logo, status icons</string>
     <string name="battery_title">Battery Saving</string>
-    <string name="battery_saving_summary">Smart pixels, suspend actions</string>
+    <string name="battery_saving_summary">Suspend actions, block sensors</string>
     <string name="ambient_display_custom_title">Ambient Display</string>
     <string name="ambient_display_custom_summary">Always on, music ticker, gestures</string>
     <string name="screen_title">Screen</string>
@@ -678,6 +678,12 @@
     <string name="pulse_ambient_light_repeat_count_title">Light repeat count</string>
     <string name="pulse_ambient_light_show_always_title">Show always</string>
     <string name="pulse_ambient_light_show_always_summary">Show lights for all doze events and not just notifications</string>
+    <string name="pulse_ambient_light_repeat_direction_title">Light repeat mode</string>
+    <string name="pulse_ambient_light_repeat_direction_restart">Restart</string>
+    <string name="pulse_ambient_light_repeat_direction_reverse">Reverse</string>
+    <string name="pulse_ambient_light_layout_title">Light view</string>
+    <string name="pulse_ambient_light_layout_solid">Solid</string>
+    <string name="pulse_ambient_light_layout_faded">Faded</string>
 
     <!-- QS footer icons -->
     <string name="qs_footer_title">Footer</string>
@@ -1012,8 +1018,11 @@
     <string name="listview_bounce_interpolator">Bounce</string>
 
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">Sensor block per-package</string>
-    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
+    <string name="sensor_block_title">Block sensors</string>
+    <string name="sensor_block_summary">Block access to certain sensors for selected apps</string>
+    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
+    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
+    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Battery bar</string>
@@ -1089,5 +1098,58 @@
     <string name="ticker_animation_mode_alpha_fade">Fade</string>
     <string name="ticker_animation_mode_scroll">Scroll</string>
     <string name="ticker_tick_duration_title">Duration</string>
+
+    <!-- Headset ringtone audio focus -->
+    <string name="ringtone_focus_mode_title">Ringtone focus mode</string>
+    <string name="ringtone_focus_mode_dynamic">Headset (If media is playing)</string>
+    <string name="ringtone_focus_mode_stock">Speaker and headset</string>
+
+    <!-- QS tile tint -->
+    <string name="qs_tile_accent_tint_title">Tint tiles</string>
+    <string name="qs_tile_accent_tint_summary">Apply accent color tint to QS tiles</string>
+
+    <!-- QS statusbar background -->
+    <string name="qs_header_background_title">Statusbar background</string>
+    <string name="qs_header_background_black">Black</string>
+    <string name="qs_header_background_transparent">Transparent</string>
+
+    <!-- Notification count -->
+    <string name="status_bar_notif_count_title">Notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_category">Settings Dashboard</string>
+    <string name="dashboard_conditions_title">Condition cards</string>
+    <string name="dashboard_conditions_summary">Show condition cards on the dashboard</string>
+    <string name="dashboard_suggestions_title">Suggestion cards</string>
+    <string name="dashboard_suggestions_summary">Show suggestion cards on the dashboard</string>
+
+    <!-- Pulse -->
+    <string name="pulse_help_policy_notice_summary">Pulse does not work with some audio sources when listening on device speaker</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Navigation bar audio graphic equalizer</string>
+    <string name="pulse_render_mode_title">Render mode</string>
+    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
+    <string name="pulse_render_mode_solid_lines">Solid lines</string>
+    <string name="pulse_color">Color</string>
+    <string name="pulse_color_mode">Color mode</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_color_custom">Custom</string>
+    <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_auto">Automatic (Album art)</string>
+    <string name="pulse_color_chooser">Custom color</string>
+    <string name="smoothing_enabled_title">Animation smoothing</string>
+    <string name="smoothing_enabled_summary">Animate each pulse bar more smoothly</string>
+    <string name="pulse_legacy_mode_advanced_category">Fading blocks</string>
+    <string name="pulse_custom_fudge_factor">Sanity level</string>
+    <string name="lavamp_speed_title">Lava lamp speed</string>
+    <string name="pulse_solid_units_count">Lines count</string>
+    <string name="pulse_solid_lines_count">Lines count</string>
+    <string name="pulse_solid_units_opacity">Lines opacity</string>
+    <string name="pulse_solid_dimen_category">Solid lines</string>
+    <string name="pulse_custom_dimen">Bar width</string>
+    <string name="pulse_custom_div">Bar spacing</string>
+    <string name="pulse_filled_block_size">Block size</string>
+    <string name="pulse_empty_block_size">Block spacing</string>
 
 </resources>
